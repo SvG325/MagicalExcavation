@@ -1,0 +1,40 @@
+<div class="component-container">
+ <p>
+    You currently have {{playerinfo.intEmptyCrystals}} empty crystals.
+    <br>
+    You currently have {{playerinfo.intWaterCrystals}} crystals imbued with water energy.
+    <br>
+    You currently have {{playerinfo.intFireCrystals}} crystals imbued with fire energy.
+    <br>
+    You currently have {{playerinfo.intWindCrystals}} crystals imbued with wind energy.
+    <br>
+    You currently have {{playerinfo.intEarthCrystals}} crystals imbued with earth energy.
+
+  </p>
+
+ <mat-card *ngFor="let spell of spells" >    
+    <mat-card-content>
+      <div style="overflow:auto">
+        <h4 style="margin:0px;">{{spell.name}}</h4>
+        <div style="width:70%;float:left; ">
+          <p style="margin-bottom:0px;">Requirements:</p>
+          <p style="margin: 5px;" *ngFor="let line of spell.requirements.toString().split('\n')">{{line}}</p>
+         
+          <p>
+            Effects: <br>
+            {{spell.effectdescription}} ( x{{spell.effectvalue}} )
+          </p>
+        </div>
+
+        <div style="width:30%; float:right; display: flex;
+             justify-content: center; position: absolute; bottom: 0; right: 0; padding-bottom: 20px;">
+          <button mat-raised-button color="primary" (click)="cast(spell.id)" >
+          Cast
+      </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+
+</div>

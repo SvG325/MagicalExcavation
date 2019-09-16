@@ -1,0 +1,76 @@
+
+
+<div class="component-container">
+  <p>
+    You currently have {{playerinfo.intEmptyCrystals}} empty crystals.
+    <br>
+    You currently have {{playerinfo.intWaterCrystals}} crystals imbued with water energy.
+    <br>
+    You currently have {{playerinfo.intFireCrystals}} crystals imbued with fire energy.
+    <br>
+    You currently have {{playerinfo.intWindCrystals}} crystals imbued with wind energy.
+    <br>
+    You currently have {{playerinfo.intEarthCrystals}} crystals imbued with earth energy.
+
+  </p>
+ 
+
+  <br>
+<!-- Mining card -->
+  <mat-card>    
+    <mat-card-content>
+      <div style="overflow:auto">
+        <h4 style="margin:0px;">Crystal vein</h4>
+        <div style="width:70%;float:left; ">
+          <p>
+          This rocky outcrop seems to contain crystallized minerals which can be shaped into empty magic crystals. 
+        </p>
+        </div>
+
+        <div style="width:30%; float:right; display: flex;
+             justify-content: center; position: absolute; bottom: 0; right: 0; padding-bottom: 20px;">
+          <button mat-raised-button color="primary" (click)="mine()" >
+          Mine
+      </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+
+<br>
+
+<!-- Meditation card -->
+<mat-card>
+    <mat-card-content>
+      <div style="overflow:auto">
+        <h4>Tranquil pond</h4>
+        <p>
+            At the edge of this peaceful pond there is a strong connection to elemental energies. Pick a focus to imbue empty crystals.
+          </p>
+        <div style="width:70%;float:left; display: flex; justify-content: center; ">
+          <mat-button-toggle-group #groupFocus="matButtonToggleGroup" name="focusElement" (valueChange)="focusChanged(groupFocus.value)">
+            <mat-button-toggle value="0">Water</mat-button-toggle>
+            <mat-button-toggle value="1">Fire</mat-button-toggle>
+            <mat-button-toggle value="2">Wind</mat-button-toggle>
+            <mat-button-toggle value="3">Earth</mat-button-toggle>
+          </mat-button-toggle-group>  
+        </div>
+
+        <div style="width:30%; float:right; display: flex;
+                justify-content: center; position: absolute; bottom: 0; right: 0; padding-bottom: 20px;">
+          <button mat-raised-button color="primary" (click)="meditate()">
+            Meditate
+        </button>
+        </div>
+
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+
+
+
+</div>
+
+

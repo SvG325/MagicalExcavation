@@ -1,0 +1,9 @@
+.component-container {
+
+  background-color: lightblue;
+  padding: 10px 30px 20px 30px;
+}
+
+mat-card{
+  margin-bottom: 20px;
+}
